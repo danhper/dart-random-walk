@@ -17,19 +17,48 @@
     <h1 class="text-center">Random walk</h1>
 
     <h2>シミュレーション実行</h2>
-    <form class="form-inline" role="form">
-      <select id="walk-type" class="form-control">
-        <option value="0">一次元等確率正負</option>
-        <option value="1">一次元等確率正のみ</option>
-        <option value="2">一次元不等確率</option>
-        <option value="3">二次元</option>
-      </select>
+    <div class="row">
+      <div class="col-xs-6">
+        <form class="form-inline" role="form">
+          <select id="walk-type" class="form-control">
+            <option value="0">一次元等確率正負</option>
+            <option value="1">一次元等確率正のみ</option>
+            <option value="2">一次元不等確率</option>
+            <option value="3">二次元</option>
+          </select>
 
-      <label class="checkbox-inline">
-        <input type="checkbox" id="animate-walk" value="true" checked="checked">アニメーションを表示
-      </label>
-      <button id="run-simulation" class="btn btn-primary" type="button">実行</button>
-    </form>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="animate-walk" value="true" checked="checked">アニメーションを表示
+          </label>
+
+          <label class="checkbox-inline">
+            <input class="input-xs" type="number" id="run-num">実行回数
+          </label>
+
+          <button id="run-simulation" class="btn btn-primary" type="button">実行</button>
+        </form>
+      </div>
+
+      <div class="col-xs-6">
+        <table class="table">
+          <caption>合計結果</caption>
+          <thead>
+            <tr>
+              <td>一次元等確率正負</td>
+              <td>一次元等確率正のみ</td>
+              <td>一次元不等確率</td>
+              <td>二次元</td>
+            </tr>
+          </thead>
+          <tbody>
+            <td id="result-0">NA</td>
+            <td id="result-1">NA</td>
+            <td id="result-2">NA</td>
+            <td id="result-3">NA</td>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <div id="result-wrapper">
       <h3>実行結果: <span id="result"></span></h3>
