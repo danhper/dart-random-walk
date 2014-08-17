@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random walk</title>
+
+  <script async type="application/dart" src="simulator.dart"></script>
+  <script async src="packages/browser/dart.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="random_walk.css">
+
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Random walk</h1>
+
+    <h2>シミュレーション実行</h2>
+    <form class="form-inline" role="form">
+      <select id="walk-type" class="form-control">
+        <option value="0">一次元等確率正負</option>
+        <option value="1">一次元等確率正のみ</option>
+        <option value="2">一次元不等確率</option>
+        <option value="3">二次元</option>
+      </select>
+
+      <label class="checkbox-inline">
+        <input type="checkbox" id="animate-walk" value="true" checked="checked">アニメーションを表示
+      </label>
+      <button id="run-simulation" class="btn btn-primary" type="button">実行</button>
+    </form>
+
+    <div id="result-wrapper">
+      <h3>実行結果: <span id="result"></span></h3>
+    </div>
+
+    <canvas id="random-walk-canvas" width="1000" height="600"></canvas>
+  </div>
+</body>
+</html>
