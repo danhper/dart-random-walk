@@ -1,3 +1,14 @@
 #random-walk-canvas {
   margin-top: 20px;
 }
+
+.input-xs {
+  padding: 5px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+#run-num {
+  width: 50px;
+}

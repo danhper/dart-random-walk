@@ -49,7 +49,7 @@ abstract class RandomWalk {
 
   getPosition() => _position;
 
-  void run(Function callback, {int n: 0}) {
+  void _run(Function callback, int n) {
     if (n >= _repetitions) {
       callback();
       return;
@@ -59,10 +59,15 @@ abstract class RandomWalk {
       _updateDisplay();
     }
     if (_showMovements) {
-      new Future.delayed(const Duration(milliseconds: 100), () => run(callback, n: n + 1));
+      new Future.delayed(const Duration(milliseconds: 100), () => _run(callback, n + 1));
     } else {
-      run(callback, n: n + 1);
+      _run(callback, n + 1);
     }
+  }
+
+  void run(Function callback) {
+    _position = new IntPoint(0, 0);
+    _run(callback, 0);
   }
 }
 
